@@ -10,8 +10,8 @@ class apb_monitor;
       bins ones={32'hFFFFFFFF};
       bins others=default;
     }
-    ADDR: coverpoint mon_tx.PADDR {bins a={[0:31]};}
-    STRB: coverpoint mon_tx.PSTRB {bins s[]={[0:15]};}
+    ADDR: coverpoint mon_tx.PADDR {bins va[4]={[0:255]}; bins inva={[256:511]};}
+    STRB: coverpoint mon_tx.PSTRB {bins s[]={4'b0000,4'b0001,4'b0010,4'b0100,4'b1000,4'b1111};}
     ERR: coverpoint mon_tx.PSLVERR {bins e[]={[0:1]};}
     
     WxA: cross WRITE,ADDR;
