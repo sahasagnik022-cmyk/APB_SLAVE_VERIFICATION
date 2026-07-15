@@ -16,7 +16,6 @@ class apb_monitor;
     
     WxA: cross WRITE,ADDR;
     STxW: cross STRB,WRITE;
-    WxS: cross WRITE,ERR; 
   endgroup
   
   function new(virtual apb_if.mon vif,mailbox #(apb_transaction) mbx);
