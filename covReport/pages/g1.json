@@ -1,0 +1,24 @@
+var g_data = {
+g276:[{dummy:0},
+{name:'cg',f:1,type:1,id:278,tb:'33',h:'33',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','auto(true)']],parent:'276'}],
+c278:{name:'cg',type:1,pHash:'276',pPath:'/apb_pkg/apb_monitor',totals:[17,17,'100.00%','G',16,16,'100.00%','G'],cvp:[{dummy:0},
+{name:'WRITE',f:1,type:4,id:279,tb:'2',h:'2',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'278'},
+{name:'WRDATA',f:1,type:4,id:280,tb:'2',h:'2',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'278'},
+{name:'ADDR',f:1,type:4,id:281,tb:'5',h:'5',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'278'},
+{name:'STRB',f:1,type:4,id:282,tb:'6',h:'6',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'278'},
+{name:'ERR',f:1,type:4,id:283,tb:'2',h:'2',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'278'}],crx:[{dummy:0},
+{name:'WxA',f:1,type:5,id:284,tb:'10',h:'10',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'278',cross:['WRITE','ADDR']},
+{name:'STxW',f:1,type:5,id:285,tb:'6',h:'6',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'278',cross:['STRB','WRITE']}]},
+g428:[{dummy:0},
+{name:'cg',f:1,type:1,id:430,tb:'33',h:'33',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','true']],parent:'428'}],
+c430:{name:'cg',type:1,pHash:'428',pPath:'work.apb_pkg::apb_monitor',totals:[17,17,'100.00%','G',16,16,'100.00%','G'],cvp:[{dummy:0},
+{name:'WRITE',f:1,type:4,id:431,tb:'2',h:'2',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'430'},
+{name:'WRDATA',f:1,type:4,id:432,tb:'2',h:'2',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'430'},
+{name:'ADDR',f:1,type:4,id:433,tb:'5',h:'5',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'430'},
+{name:'STRB',f:1,type:4,id:434,tb:'6',h:'6',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'430'},
+{name:'ERR',f:1,type:4,id:435,tb:'2',h:'2',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'430'}],crx:[{dummy:0},
+{name:'WxA',f:1,type:5,id:436,tb:'10',h:'10',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'430',cross:['WRITE','ADDR']},
+{name:'STxW',f:1,type:5,id:437,tb:'6',h:'6',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'430',cross:['STRB','WRITE']}]},
+dummyEnd:0
+};
+processCovergroupsData(g_data);

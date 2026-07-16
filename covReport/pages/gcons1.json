@@ -1,0 +1,5 @@
+var g_db_data = [
+{dummy:0},
+{name:'cg',f:1,type:6,id:278,tb:'33',h:'33',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','auto(true)']],hdlPath:'/apb_pkg/apb_monitor',parent:'276'},
+{name:'cg',f:1,type:6,id:430,tb:'33',h:'33',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','true']],hdlPath:'work.apb_pkg::apb_monitor',parent:'428'}];
+processConsCovergroupsData(g_db_data);
