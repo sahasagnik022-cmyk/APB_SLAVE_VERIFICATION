@@ -8,9 +8,9 @@ class apb_env;
   virtual apb_if vif;
   
   function new(virtual apb_if vif);
-    this.vif=vif;
-    g2d_mbx=new();
-    m2s_mbx=new();
+    this.vif = vif;
+    g2d_mbx = new();
+    m2s_mbx = new();
     gen = new(g2d_mbx);
     drv = new(vif.drv, g2d_mbx); 
     mon = new(vif.mon, m2s_mbx); 
@@ -18,22 +18,12 @@ class apb_env;
   endfunction
   
   task run();
-
-    $display("[ENV] Start Execution");
+    $display("[ENV] Starting Driver, Monitor, and Scoreboard");
     fork
-      gen.run(); 
       drv.run();
       mon.run();
       scb.run();
-    join_any
-    while(g2d_mbx.num() > 0) begin
-      @(vif.drv_cb); 
-    end
-    #10;
-    scb.report();
-    $display("[ENV] Simulation Complete");
-    $finish;            
-    
+    join_none 
   endtask
   
 endclass
