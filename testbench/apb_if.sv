@@ -12,12 +12,12 @@ interface apb_if(input bit PCLK ,input bit PRESETn);
   logic PREADY;
   
   clocking drv_cb@(posedge PCLK);
-    default input #1 output #1;
+    default input #1;
     output PSEL,PWRITE,PENABLE,PWDATA,PADDR,PSTRB;
   endclocking
   
   clocking mon_cb@(posedge PCLK);
-    default input #1 output #1;
+    default input #1;
     input PRDATA,PSLVERR,PREADY,PSEL,PWRITE,PENABLE,PWDATA,PADDR,PSTRB;
   endclocking
   
