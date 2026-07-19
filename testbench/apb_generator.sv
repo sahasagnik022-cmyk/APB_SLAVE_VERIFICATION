@@ -88,23 +88,4 @@ class apb_generator;
     end
   endtask
   
-  // MAIN TASK
-  task run();
-    $display("=================================================");
-    $display("[GEN] STARTING FULL TEST");
-    $display("=================================================");
-    
-    run_b2b_write(5);
-    run_byte_test();
-    run_full_byte_test();
-    run_no_byte_test();
-    run_write_read();
-    run_b2b_read(5);
-    run_error_test();
-    
-    $display("\n=================================================");
-    $display("[GEN] FULL TEST COMPLETED");
-    $display("=================================================");
-  endtask
-  
 endclass
