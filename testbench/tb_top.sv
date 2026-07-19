@@ -1,7 +1,9 @@
 import apb_pkg::*;
+
 module tb_top;
   bit PCLK;
   bit PRESETn;
+  
   always #5 PCLK = ~PCLK; 
 
   initial begin
@@ -9,7 +11,9 @@ module tb_top;
     PRESETn = 0;    
     #20 PRESETn = 1;  
   end
+  
   apb_if vif(PCLK, PRESETn);
+  
   apb_slave DUT (
     .PCLK    (PCLK),         
     .PRESETn (PRESETn),        
@@ -23,12 +27,10 @@ module tb_top;
     .PREADY  (vif.PREADY),
     .PSLVERR (vif.PSLVERR)
   );
-
-  apb_test test;
-
+  test_full test;
   initial begin
+    wait(PRESETn == 1);
     test = new(vif);
-    test.run();
+    test.execute_test();
   end
-
 endmodule
