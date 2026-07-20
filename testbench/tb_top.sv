@@ -1,22 +1,13 @@
 import apb_pkg::*;
-
+//`include "apb_assertion.sv"
 module tb_top;
   bit PCLK;
   bit PRESETn;
-  
-  always #5 PCLK = ~PCLK; 
-
-  initial begin
-    PCLK = 0;
-    PRESETn = 0;    
-    #20 PRESETn = 1;  
-  end
-  
+  always #5 PCLK = ~PCLK;
   apb_if vif(PCLK, PRESETn);
-  
   apb_slave DUT (
-    .PCLK    (PCLK),         
-    .PRESETn (PRESETn),        
+    .PCLK    (PCLK),
+    .PRESETn (PRESETn),
     .PADDR   (vif.PADDR),
     .PSEL    (vif.PSEL),
     .PENABLE (vif.PENABLE),
@@ -27,10 +18,28 @@ module tb_top;
     .PREADY  (vif.PREADY),
     .PSLVERR (vif.PSLVERR)
   );
-  test_full test;
+  bind apb_slave apb_assertion sva_inst (
+    .PCLK(PCLK),
+    .PRESETn(PRESETn),
+    .PSEL(PSEL),
+    .PENABLE(PENABLE),
+    .PWRITE(PWRITE),
+    .PADDR(PADDR),
+    .PSTRB(PSTRB),
+    .PREADY(PREADY),
+    .PSLVERR(PSLVERR)
+  );
+
+  apb_test test;
+
   initial begin
-    wait(PRESETn == 1);
+    PCLK = 0;
+    PRESETn = 0; 
+    #1;
+    $display("[%0t] RST PRDATA=%0d | PREADY=%0d | PSLVERR=%0d",$time,vif.PRDATA,vif.PREADY,vif.PSLVERR);
+    #20;
+    PRESETn = 1; 
     test = new(vif);
-    test.execute_test();
+    test.run();
   end
 endmodule
