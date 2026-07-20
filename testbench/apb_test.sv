@@ -1,6 +1,21 @@
 class apb_test;
   apb_env env;
   virtual apb_if vif;
+  function new(virtual apb_if vif);
+    this.vif = vif;
+  endfunction
+
+  task run();
+    env = new(vif);
+    env.run();
+  endtask
+
+endclass
+
+/*
+class apb_test;
+  apb_env env;
+  virtual apb_if vif;
   
   function new(virtual apb_if vif);
     this.vif = vif; 
@@ -180,4 +195,4 @@ class test_full extends apb_test;
     t7.run();
     $display("[TEST] FULL TEST COMPLETED");
   endtask
-endclass
+endclass*/
